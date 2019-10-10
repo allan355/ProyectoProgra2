@@ -4,8 +4,28 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="031063db376f4ad2b0b346224ee9946c" Name="Diagram1" >
-        <EntityTypeShape EntityType="DataContext.Preguntas" Width="1.5" PointX="0.75" PointY="0.75" />
+      <Diagram DiagramId="031063db376f4ad2b0b346224ee9946c" Name="Diagram1" ZoomLevel="109" >
+        <EntityTypeShape EntityType="DataContext.Categoria" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DataContext.Genero" Width="1.5" PointX="5.625" PointY="6.125" />
+        <EntityTypeShape EntityType="DataContext.Log" Width="1.5" PointX="11.375" PointY="2" />
+        <EntityTypeShape EntityType="DataContext.Pregunta" Width="1.5" PointX="3" PointY="3.125" />
+        <EntityTypeShape EntityType="DataContext.Respuesta" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="DataContext.RespuestaXSesion" Width="1.5" PointX="7.125" PointY="1" />
+        <EntityTypeShape EntityType="DataContext.Sesion" Width="1.5" PointX="10.125" PointY="4.75" />
+        <EntityTypeShape EntityType="DataContext.Tema" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DataContext.TipoLog" Width="1.5" PointX="9.125" PointY="2.125" />
+        <EntityTypeShape EntityType="DataContext.TipoUsuario" Width="1.5" PointX="5.625" PointY="3.875" />
+        <EntityTypeShape EntityType="DataContext.Usuario" Width="1.5" PointX="7.875" PointY="4.5" />
+        <AssociationConnector Association="DataContext.FK_Pregunta_Categoria" />
+        <AssociationConnector Association="DataContext.FK_Usuario_Genero" />
+        <AssociationConnector Association="DataContext.FK_Log_TipoLog" />
+        <AssociationConnector Association="DataContext.FK_Pregunta_Tema" />
+        <AssociationConnector Association="DataContext.FK_RespuestaXSesion_Pregunta" />
+        <AssociationConnector Association="DataContext.FK_RespuestaXSesion_Respuesta" />
+        <AssociationConnector Association="DataContext.FK_RespuestaXSesion_Sesion" />
+        <AssociationConnector Association="DataContext.FK_Sesion_Usuario" />
+        <AssociationConnector Association="DataContext.FK_Usuario_TipoUsuario" />
+        <AssociationConnector Association="DataContext.RespuestaXPregunta" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

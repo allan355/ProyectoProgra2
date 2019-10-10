@@ -22,6 +22,16 @@ Partial Public Class dataEntities
         Throw New UnintentionalCodeFirstException()
     End Sub
 
-    Public Overridable Property Preguntas() As DbSet(Of Preguntas)
+    Public Overridable Property Categoria() As DbSet(Of Categoria)
+    Public Overridable Property Genero() As DbSet(Of Genero)
+    Public Overridable Property Log() As DbSet(Of Log)
+    Public Overridable Property Pregunta() As DbSet(Of Pregunta)
+    Public Overridable Property Respuesta() As DbSet(Of Respuesta)
+    Public Overridable Property RespuestaXSesion() As DbSet(Of RespuestaXSesion)
+    Public Overridable Property Sesion() As DbSet(Of Sesion)
+    Public Overridable Property Tema() As DbSet(Of Tema)
+    Public Overridable Property TipoLog() As DbSet(Of TipoLog)
+    Public Overridable Property TipoUsuario() As DbSet(Of TipoUsuario)
+    Public Overridable Property Usuario() As DbSet(Of Usuario)
 
 End Class
