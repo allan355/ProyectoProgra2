@@ -10,7 +10,7 @@
     <AssemblyName>Logica</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -74,9 +74,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTO\TipoUsuario.vb" />
     <Compile Include="Manejadores\TipoUsuario\TipoUsuarioLogica.vb" />
-    <Compile Include="Manejadores\TipoUsuario\TipoUsuarioManejador.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -116,8 +114,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Data\Data.vbproj">
-      <Project>{8774296b-0b0a-4839-947f-6367a1d5908d}</Project>
+      <Project>{94918c04-7912-4aca-8109-2a68bd833186}</Project>
       <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTOS\DTOS.vbproj">
+      <Project>{0b575577-5080-4460-a7db-07aadce99611}</Project>
+      <Name>DTOS</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

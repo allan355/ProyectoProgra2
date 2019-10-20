@@ -1,8 +1,6 @@
-﻿Imports Data
-
+﻿
 Public Class TipoUsuarioLogica
-    Public Shared Function ObtenerTipoUsuario() As List(Of TipoUsuario)
-        Dim context As dataEntities = New dataEntities()
-        Return TipoUsuarioManejador.ObtenerTipoUsuario(context)
+    Public Shared Function ObtenerTipoUsuario() As List(Of DTOS.TipoUsuario)
+        Return Data.TipoUsuario.ObtenerTodo()
     End Function
 End Class
