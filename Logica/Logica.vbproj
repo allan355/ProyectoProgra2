@@ -74,6 +74,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Manejadores\Genero\GeneroLogica.vb" />
     <Compile Include="Manejadores\Preguntas\PreguntasLogica.vb" />
     <Compile Include="Manejadores\TipoUsuario\TipoUsuarioLogica.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
