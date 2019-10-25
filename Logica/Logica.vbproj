@@ -74,9 +74,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Manejadores\Categoria\CategoriaLogica.vb" />
     <Compile Include="Manejadores\Genero\GeneroLogica.vb" />
+    <Compile Include="Manejadores\Log\LogLogica.vb" />
     <Compile Include="Manejadores\Preguntas\PreguntasLogica.vb" />
+    <Compile Include="Manejadores\RespuestaXPregunta\RespuestaXSesionLogica.vb" />
+    <Compile Include="Manejadores\RespuestaXSesion\RespuestaXSesion.vb" />
+    <Compile Include="Manejadores\Respuesta\RespuestaLogica.vb" />
+    <Compile Include="Manejadores\Sesion\SesionLogica.vb" />
+    <Compile Include="Manejadores\Tema\TemaLogica.vb" />
+    <Compile Include="Manejadores\TipoLog\TipoLog_Logica.vb" />
     <Compile Include="Manejadores\TipoUsuario\TipoUsuarioLogica.vb" />
+    <Compile Include="Manejadores\Usuario\UsuarioLogica.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -124,5 +133,6 @@
       <Name>DTOS</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

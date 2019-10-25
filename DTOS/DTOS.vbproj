@@ -65,7 +65,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.vb" />
+    <Compile Include="DTO\Categoria.vb" />
+    <Compile Include="DTO\Genero.vb" />
+    <Compile Include="DTO\Log.vb" />
+    <Compile Include="DTO\Pregunta.vb" />
+    <Compile Include="DTO\Respuesta.vb" />
+    <Compile Include="DTO\RespuestaXPregunta.vb" />
+    <Compile Include="DTO\RespuestaXSesion.vb" />
+    <Compile Include="DTO\Sesion.vb" />
+    <Compile Include="DTO\Tema.vb" />
+    <Compile Include="DTO\TipoLog.vb" />
     <Compile Include="DTO\TipoUsuario.vb" />
+    <Compile Include="DTO\Usuario.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
