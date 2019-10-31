@@ -83,6 +83,7 @@
     <Compile Include="Class1.vb" />
     <Compile Include="Conexion\Conexion.vb" />
     <Compile Include="Conexion\TipoUsuario.vb" />
+    <Compile Include="Conexion\Usuario.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

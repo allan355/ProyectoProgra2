@@ -76,7 +76,6 @@
   <ItemGroup>
     <Compile Include="Manejadores\Categoria\CategoriaLogica.vb" />
     <Compile Include="Manejadores\Genero\GeneroLogica.vb" />
-    <Compile Include="Manejadores\Log\LogLogica.vb" />
     <Compile Include="Manejadores\Preguntas\PreguntasLogica.vb" />
     <Compile Include="Manejadores\RespuestaXPregunta\RespuestaXSesionLogica.vb" />
     <Compile Include="Manejadores\RespuestaXSesion\RespuestaXSesion.vb" />
