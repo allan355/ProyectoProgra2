@@ -16,6 +16,7 @@ Public Class TipoUsuario
                 List.Add(TU)
             Next
         End If
+        Con.Close()
         Return List
     End Function
 
