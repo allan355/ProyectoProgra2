@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9818fe0004144d06b703a45a03c702b7" Name="Diagram1" ZoomLevel="108">
+        <EntityTypeShape EntityType="dataModel.Categoria" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dataModel.Genero" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dataModel.Log" Width="1.5" PointX="10" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dataModel.Pregunta" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dataModel.Respuesta" Width="1.5" PointX="5.375" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="dataModel.RespuestaXSesion" Width="1.5" PointX="7.5" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dataModel.Sesion" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dataModel.Tema" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dataModel.TipoLog" Width="1.5" PointX="7.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="dataModel.TipoUsuario" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dataModel.Usuario" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dataModel.RespuestasPregunta" Width="1.5" PointX="7.75" PointY="9.625" IsExpanded="true" />
+        <AssociationConnector Association="dataModel.FK_Pregunta_Categoria" ManuallyRouted="false" />
+        <AssociationConnector Association="dataModel.FK_Usuario_Genero" ManuallyRouted="false" />
+        <AssociationConnector Association="dataModel.FK_Log_TipoLog" ManuallyRouted="false" />
+        <AssociationConnector Association="dataModel.FK_Pregunta_Tema" ManuallyRouted="false" />
+        <AssociationConnector Association="dataModel.FK_RespuestaXSesion_Pregunta" ManuallyRouted="false" />
+        <AssociationConnector Association="dataModel.FK_RespuestaXSesion_Respuesta" ManuallyRouted="false" />
+        <AssociationConnector Association="dataModel.FK_RespuestaXSesion_Sesion" ManuallyRouted="false" />
+        <AssociationConnector Association="dataModel.FK_Sesion_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="dataModel.FK_Usuario_TipoUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="dataModel.RespuestaXPregunta" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
