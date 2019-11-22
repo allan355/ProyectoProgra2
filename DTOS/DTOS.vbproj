@@ -78,6 +78,7 @@
     <Compile Include="DTO\TipoUsuario.vb" />
     <Compile Include="DTO\Usuario.vb" />
     <Compile Include="DTO\Vistas\RespuestasPregunta.vb" />
+    <Compile Include="Globales\GlobalClass.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

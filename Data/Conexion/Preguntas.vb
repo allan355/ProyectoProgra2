@@ -49,13 +49,14 @@ Public Class Preguntas
         Dim DS As New DataSet()
         Dim ListaR As New List(Of DTOS.Respuesta)
         If Con.Open() Then
-            cmd.SelectCommand = New SqlCommand("SELECT * FROM RespuestasPregunta where preguntaid=" & _id, Con.ObtenerConexion())
+            cmd.SelectCommand = New SqlCommand("SELECT * FROM Respuesta where preguntaid=" & _id, Con.ObtenerConexion())
             cmd.Fill(DS)
             For i As Integer = 0 To DS.Tables(0).Rows.Count() - 1 Step 1
                 Dim R As New DTOS.Respuesta()
                 R.Id = DS.Tables(0).Rows(i)("Id")
                 R.Descripcion = DS.Tables(0).Rows(i)("Descripcion")
                 R.Correcta = DS.Tables(0).Rows(i)("Correcta")
+                R.PreguntaId = DS.Tables(0).Rows(i)("PreguntaId")
                 ListaR.Add(R)
             Next
         End If
