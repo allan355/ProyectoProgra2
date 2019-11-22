@@ -25,16 +25,16 @@ Partial Class FRM_PROF
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRM_PROF))
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.txt_question = New System.Windows.Forms.TextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cbxTipoPregunta = New System.Windows.Forms.ComboBox()
         Me.GP_SU = New System.Windows.Forms.GroupBox()
         Me.txt_D = New System.Windows.Forms.TextBox()
         Me.txt_C = New System.Windows.Forms.TextBox()
         Me.txt_B = New System.Windows.Forms.TextBox()
         Me.txt_A = New System.Windows.Forms.TextBox()
-        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.rbtnD = New System.Windows.Forms.RadioButton()
+        Me.rbtnC = New System.Windows.Forms.RadioButton()
+        Me.rbtnB = New System.Windows.Forms.RadioButton()
+        Me.rbtnA = New System.Windows.Forms.RadioButton()
         Me.GP_DESA = New System.Windows.Forms.GroupBox()
         Me.LST_ANSW = New System.Windows.Forms.ListBox()
         Me.btn_delete = New System.Windows.Forms.Button()
@@ -64,16 +64,16 @@ Partial Class FRM_PROF
         Me.txt_question.Size = New System.Drawing.Size(368, 20)
         Me.txt_question.TabIndex = 1
         '
-        'ComboBox1
+        'cbxTipoPregunta
         '
-        Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox1.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Selección Única", "Desarrollo"})
-        Me.ComboBox1.Location = New System.Drawing.Point(390, 90)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(140, 21)
-        Me.ComboBox1.TabIndex = 2
+        Me.cbxTipoPregunta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cbxTipoPregunta.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxTipoPregunta.FormattingEnabled = True
+        Me.cbxTipoPregunta.Items.AddRange(New Object() {"Selección Única", "Desarrollo", "Pareo"})
+        Me.cbxTipoPregunta.Location = New System.Drawing.Point(390, 90)
+        Me.cbxTipoPregunta.Name = "cbxTipoPregunta"
+        Me.cbxTipoPregunta.Size = New System.Drawing.Size(140, 21)
+        Me.cbxTipoPregunta.TabIndex = 2
         '
         'GP_SU
         '
@@ -82,10 +82,10 @@ Partial Class FRM_PROF
         Me.GP_SU.Controls.Add(Me.txt_C)
         Me.GP_SU.Controls.Add(Me.txt_B)
         Me.GP_SU.Controls.Add(Me.txt_A)
-        Me.GP_SU.Controls.Add(Me.RadioButton4)
-        Me.GP_SU.Controls.Add(Me.RadioButton3)
-        Me.GP_SU.Controls.Add(Me.RadioButton2)
-        Me.GP_SU.Controls.Add(Me.RadioButton1)
+        Me.GP_SU.Controls.Add(Me.rbtnD)
+        Me.GP_SU.Controls.Add(Me.rbtnC)
+        Me.GP_SU.Controls.Add(Me.rbtnB)
+        Me.GP_SU.Controls.Add(Me.rbtnA)
         Me.GP_SU.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GP_SU.ForeColor = System.Drawing.Color.Black
         Me.GP_SU.Location = New System.Drawing.Point(92, 125)
@@ -123,49 +123,48 @@ Partial Class FRM_PROF
         Me.txt_A.Size = New System.Drawing.Size(80, 20)
         Me.txt_A.TabIndex = 5
         '
-        'RadioButton4
+        'rbtnD
         '
-        Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Location = New System.Drawing.Point(157, 61)
-        Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(33, 17)
-        Me.RadioButton4.TabIndex = 3
-        Me.RadioButton4.TabStop = True
-        Me.RadioButton4.Text = "D"
-        Me.RadioButton4.UseVisualStyleBackColor = True
+        Me.rbtnD.AutoSize = True
+        Me.rbtnD.Location = New System.Drawing.Point(157, 61)
+        Me.rbtnD.Name = "rbtnD"
+        Me.rbtnD.Size = New System.Drawing.Size(33, 17)
+        Me.rbtnD.TabIndex = 3
+        Me.rbtnD.TabStop = True
+        Me.rbtnD.Text = "D"
+        Me.rbtnD.UseVisualStyleBackColor = True
         '
-        'RadioButton3
+        'rbtnC
         '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(156, 19)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(34, 17)
-        Me.RadioButton3.TabIndex = 2
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "C"
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.rbtnC.AutoSize = True
+        Me.rbtnC.Location = New System.Drawing.Point(156, 19)
+        Me.rbtnC.Name = "rbtnC"
+        Me.rbtnC.Size = New System.Drawing.Size(34, 17)
+        Me.rbtnC.TabIndex = 2
+        Me.rbtnC.Text = "C"
+        Me.rbtnC.UseVisualStyleBackColor = True
         '
-        'RadioButton2
+        'rbtnB
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(7, 61)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(33, 17)
-        Me.RadioButton2.TabIndex = 1
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "B"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.rbtnB.AutoSize = True
+        Me.rbtnB.Location = New System.Drawing.Point(7, 61)
+        Me.rbtnB.Name = "rbtnB"
+        Me.rbtnB.Size = New System.Drawing.Size(33, 17)
+        Me.rbtnB.TabIndex = 1
+        Me.rbtnB.TabStop = True
+        Me.rbtnB.Text = "B"
+        Me.rbtnB.UseVisualStyleBackColor = True
         '
-        'RadioButton1
+        'rbtnA
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(7, 19)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(33, 17)
-        Me.RadioButton1.TabIndex = 0
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "A"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.rbtnA.AutoSize = True
+        Me.rbtnA.Location = New System.Drawing.Point(7, 19)
+        Me.rbtnA.Name = "rbtnA"
+        Me.rbtnA.Size = New System.Drawing.Size(33, 17)
+        Me.rbtnA.TabIndex = 0
+        Me.rbtnA.TabStop = True
+        Me.rbtnA.Text = "A"
+        Me.rbtnA.UseVisualStyleBackColor = True
         '
         'GP_DESA
         '
@@ -246,7 +245,7 @@ Partial Class FRM_PROF
         Me.Controls.Add(Me.btn_agregar)
         Me.Controls.Add(Me.GP_DESA)
         Me.Controls.Add(Me.GP_SU)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.cbxTipoPregunta)
         Me.Controls.Add(Me.txt_question)
         Me.Controls.Add(Me.PictureBox1)
         Me.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -264,12 +263,12 @@ Partial Class FRM_PROF
 
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents txt_question As TextBox
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cbxTipoPregunta As ComboBox
     Friend WithEvents GP_SU As GroupBox
-    Friend WithEvents RadioButton4 As RadioButton
-    Friend WithEvents RadioButton3 As RadioButton
-    Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents rbtnD As RadioButton
+    Friend WithEvents rbtnC As RadioButton
+    Friend WithEvents rbtnB As RadioButton
+    Friend WithEvents rbtnA As RadioButton
     Friend WithEvents GP_DESA As GroupBox
     Friend WithEvents btn_delete As Button
     Friend WithEvents btn_add As Button

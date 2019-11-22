@@ -4,7 +4,7 @@ Public Class Conexion
     Dim ConexionS As SqlConnection
 
     Public Sub New()
-
+        ConexionS = New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("dataEntities").ToString())
     End Sub
 
     Public Function ObtenerConexion() As SqlConnection
@@ -13,7 +13,6 @@ Public Class Conexion
 
     Public Function Open() As Boolean
         Try
-            ConexionS = New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("dataEntities").ToString())
             ConexionS.Open()
             Return True
         Catch ex As Exception
