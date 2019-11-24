@@ -46,6 +46,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -69,6 +71,7 @@
     <Compile Include="DTO\Genero.vb" />
     <Compile Include="DTO\Log.vb" />
     <Compile Include="DTO\Pregunta.vb" />
+    <Compile Include="DTO\PreguntaPareo.vb" />
     <Compile Include="DTO\Respuesta.vb" />
     <Compile Include="DTO\RespuestaXPregunta.vb" />
     <Compile Include="DTO\RespuestaXSesion.vb" />

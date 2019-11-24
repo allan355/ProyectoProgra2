@@ -18,14 +18,22 @@
         If Me.cbxTipoPregunta.SelectedIndex = 0 Then
             GP_DESA.Enabled = False
             GP_SU.Enabled = True
+            gbxPreguntas.Visible = True
+            gbxPareo.Visible = False
         End If
         If Me.cbxTipoPregunta.SelectedIndex = 1 Then
             GP_SU.Enabled = False
             GP_DESA.Enabled = True
+            gbxPreguntas.Visible = True
+            gbxPareo.Visible = False
+        End If
+        If Me.cbxTipoPregunta.SelectedIndex = 2 Then
+            gbxPreguntas.Visible = False
+            gbxPareo.Visible = True
         End If
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -82,5 +90,11 @@
 
     Private Sub FRM_PROF_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cbxTipoPregunta.SelectedIndex = 0
+        gbxPreguntas.Location = New Point(12, 65)
+    End Sub
+
+    Private Sub VerUsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VerUsuariosToolStripMenuItem.Click
+        Dim ventana As Estudiantes = New Estudiantes()
+        ventana.Show()
     End Sub
 End Class

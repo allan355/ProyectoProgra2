@@ -14,8 +14,11 @@ Public Class Usuario
                 Dim U As New DTOS.Usuario()
                 U.Id = DS.Tables(0).Rows(i)("Id")
                 U.Nombre = DS.Tables(0).Rows(i)("Nombre")
+                U.Apellido = DS.Tables(0).Rows(i)("Apellido")
                 U.GeneroId = DS.Tables(0).Rows(i)("GeneroId")
                 U.TipoUsuarioId = DS.Tables(0).Rows(i)("TipoUsuarioId")
+                U.TipoUsuario = TipoUsuario.ObtenerTU(U.TipoUsuarioId)
+                U.Genero = Genero.ObtenerTU(U.GeneroId)
                 List.Add(U)
             Next
         End If
@@ -34,6 +37,8 @@ Public Class Usuario
                 U.Nombre = DS.Tables(0).Rows(i)("Nombre")
                 U.GeneroId = DS.Tables(0).Rows(i)("GeneroId")
                 U.TipoUsuarioId = DS.Tables(0).Rows(i)("TipoUsuarioId")
+                U.TipoUsuario = TipoUsuario.ObtenerTU(U.TipoUsuarioId)
+                U.Genero = Genero.ObtenerTU(U.GeneroId)
                 Exit For
             Next
         End If

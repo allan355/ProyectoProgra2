@@ -99,6 +99,12 @@
     <Compile Include="Inicio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Profesor\Estudiantes.Designer.vb">
+      <DependentUpon>Estudiantes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Profesor\Estudiantes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="sample.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -135,12 +141,14 @@
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Profesor\Estudiantes.resx">
+      <DependentUpon>Estudiantes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="sample.resx">
       <DependentUpon>sample.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
