@@ -37,10 +37,11 @@ Partial Class FRM_MAIN
         Me.RAD_OPT1 = New System.Windows.Forms.RadioButton()
         Me.rhtxtPregunta = New System.Windows.Forms.RichTextBox()
         Me.gbxPareo = New System.Windows.Forms.GroupBox()
+        Me.cbxParResp1 = New System.Windows.Forms.ComboBox()
         Me.lblIzqPareo5 = New System.Windows.Forms.Label()
         Me.lblIzqPareo4 = New System.Windows.Forms.Label()
         Me.lblIzqPareo3 = New System.Windows.Forms.Label()
-        Me.lblIzqPareo = New System.Windows.Forms.Label()
+        Me.lblIzqPareo2 = New System.Windows.Forms.Label()
         Me.lblIzqPareo1 = New System.Windows.Forms.Label()
         Me.lblDerPareo5 = New System.Windows.Forms.Label()
         Me.lblDerPareo4 = New System.Windows.Forms.Label()
@@ -52,10 +53,17 @@ Partial Class FRM_MAIN
         Me.InicioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.lblTimeStatic = New System.Windows.Forms.ToolStripStatusLabel()
         Me.lbl_time = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.lblProgreso = New System.Windows.Forms.ToolStripStatusLabel()
         Me.pgsbProcesso = New System.Windows.Forms.ToolStripProgressBar()
+        Me.lblNota = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.cbxParResp2 = New System.Windows.Forms.ComboBox()
+        Me.cbxParResp3 = New System.Windows.Forms.ComboBox()
+        Me.cbxParResp4 = New System.Windows.Forms.ComboBox()
+        Me.cbxParResp5 = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblUsuario = New System.Windows.Forms.Label()
         Me.gpbxResp.SuspendLayout()
         Me.gbxComplete.SuspendLayout()
         Me.gbxSU.SuspendLayout()
@@ -69,11 +77,11 @@ Partial Class FRM_MAIN
         Me.lbl_instruction.AutoSize = True
         Me.lbl_instruction.BackColor = System.Drawing.Color.Transparent
         Me.lbl_instruction.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lbl_instruction.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_instruction.Font = New System.Drawing.Font("MV Boli", 8.25!)
         Me.lbl_instruction.ForeColor = System.Drawing.Color.White
         Me.lbl_instruction.Location = New System.Drawing.Point(18, 70)
         Me.lbl_instruction.Name = "lbl_instruction"
-        Me.lbl_instruction.Size = New System.Drawing.Size(618, 32)
+        Me.lbl_instruction.Size = New System.Drawing.Size(613, 34)
         Me.lbl_instruction.TabIndex = 4
         Me.lbl_instruction.Text = "Adivinanzas. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "En esta sección se pretende evaluar la capacidad de pensamiento la" &
     "teral del estudiante. una única respuesta correcta." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
@@ -190,8 +198,9 @@ Partial Class FRM_MAIN
         '
         'rhtxtPregunta
         '
-        Me.rhtxtPregunta.BackColor = System.Drawing.Color.White
+        Me.rhtxtPregunta.BackColor = System.Drawing.Color.Teal
         Me.rhtxtPregunta.Enabled = False
+        Me.rhtxtPregunta.ForeColor = System.Drawing.Color.Black
         Me.rhtxtPregunta.Location = New System.Drawing.Point(6, 17)
         Me.rhtxtPregunta.Name = "rhtxtPregunta"
         Me.rhtxtPregunta.Size = New System.Drawing.Size(600, 96)
@@ -200,10 +209,15 @@ Partial Class FRM_MAIN
         '
         'gbxPareo
         '
+        Me.gbxPareo.Controls.Add(Me.cbxParResp5)
+        Me.gbxPareo.Controls.Add(Me.cbxParResp4)
+        Me.gbxPareo.Controls.Add(Me.cbxParResp3)
+        Me.gbxPareo.Controls.Add(Me.cbxParResp2)
+        Me.gbxPareo.Controls.Add(Me.cbxParResp1)
         Me.gbxPareo.Controls.Add(Me.lblIzqPareo5)
         Me.gbxPareo.Controls.Add(Me.lblIzqPareo4)
         Me.gbxPareo.Controls.Add(Me.lblIzqPareo3)
-        Me.gbxPareo.Controls.Add(Me.lblIzqPareo)
+        Me.gbxPareo.Controls.Add(Me.lblIzqPareo2)
         Me.gbxPareo.Controls.Add(Me.lblIzqPareo1)
         Me.gbxPareo.Controls.Add(Me.lblDerPareo5)
         Me.gbxPareo.Controls.Add(Me.lblDerPareo4)
@@ -216,95 +230,134 @@ Partial Class FRM_MAIN
         Me.gbxPareo.TabIndex = 13
         Me.gbxPareo.TabStop = False
         '
+        'cbxParResp1
+        '
+        Me.cbxParResp1.Font = New System.Drawing.Font("MV Boli", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxParResp1.FormattingEnabled = True
+        Me.cbxParResp1.Location = New System.Drawing.Point(6, 13)
+        Me.cbxParResp1.Name = "cbxParResp1"
+        Me.cbxParResp1.Size = New System.Drawing.Size(121, 24)
+        Me.cbxParResp1.TabIndex = 10
+        '
         'lblIzqPareo5
         '
         Me.lblIzqPareo5.AutoSize = True
-        Me.lblIzqPareo5.Location = New System.Drawing.Point(484, 237)
+        Me.lblIzqPareo5.Font = New System.Drawing.Font("MV Boli", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIzqPareo5.ForeColor = System.Drawing.Color.White
+        Me.lblIzqPareo5.Location = New System.Drawing.Point(133, 237)
         Me.lblIzqPareo5.Name = "lblIzqPareo5"
-        Me.lblIzqPareo5.Size = New System.Drawing.Size(42, 13)
+        Me.lblIzqPareo5.Size = New System.Drawing.Size(47, 16)
         Me.lblIzqPareo5.TabIndex = 9
         Me.lblIzqPareo5.Text = "Label7"
         '
         'lblIzqPareo4
         '
         Me.lblIzqPareo4.AutoSize = True
-        Me.lblIzqPareo4.Location = New System.Drawing.Point(484, 179)
+        Me.lblIzqPareo4.Font = New System.Drawing.Font("MV Boli", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIzqPareo4.ForeColor = System.Drawing.Color.White
+        Me.lblIzqPareo4.Location = New System.Drawing.Point(133, 179)
         Me.lblIzqPareo4.Name = "lblIzqPareo4"
-        Me.lblIzqPareo4.Size = New System.Drawing.Size(42, 13)
+        Me.lblIzqPareo4.Size = New System.Drawing.Size(47, 16)
         Me.lblIzqPareo4.TabIndex = 8
         Me.lblIzqPareo4.Text = "Label8"
         '
         'lblIzqPareo3
         '
         Me.lblIzqPareo3.AutoSize = True
-        Me.lblIzqPareo3.Location = New System.Drawing.Point(484, 125)
+        Me.lblIzqPareo3.Font = New System.Drawing.Font("MV Boli", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIzqPareo3.ForeColor = System.Drawing.Color.White
+        Me.lblIzqPareo3.Location = New System.Drawing.Point(133, 125)
         Me.lblIzqPareo3.Name = "lblIzqPareo3"
-        Me.lblIzqPareo3.Size = New System.Drawing.Size(42, 13)
+        Me.lblIzqPareo3.Size = New System.Drawing.Size(47, 16)
         Me.lblIzqPareo3.TabIndex = 7
         Me.lblIzqPareo3.Text = "Label9"
         '
-        'lblIzqPareo
+        'lblIzqPareo2
         '
-        Me.lblIzqPareo.AutoSize = True
-        Me.lblIzqPareo.Location = New System.Drawing.Point(484, 73)
-        Me.lblIzqPareo.Name = "lblIzqPareo"
-        Me.lblIzqPareo.Size = New System.Drawing.Size(48, 13)
-        Me.lblIzqPareo.TabIndex = 6
-        Me.lblIzqPareo.Text = "Label10"
+        Me.lblIzqPareo2.AutoSize = True
+        Me.lblIzqPareo2.Font = New System.Drawing.Font("MV Boli", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIzqPareo2.ForeColor = System.Drawing.Color.White
+        Me.lblIzqPareo2.Location = New System.Drawing.Point(133, 73)
+        Me.lblIzqPareo2.Name = "lblIzqPareo2"
+        Me.lblIzqPareo2.Size = New System.Drawing.Size(53, 16)
+        Me.lblIzqPareo2.TabIndex = 6
+        Me.lblIzqPareo2.Text = "Label10"
         '
         'lblIzqPareo1
         '
         Me.lblIzqPareo1.AutoSize = True
-        Me.lblIzqPareo1.Location = New System.Drawing.Point(484, 16)
+        Me.lblIzqPareo1.Font = New System.Drawing.Font("MV Boli", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIzqPareo1.ForeColor = System.Drawing.Color.White
+        Me.lblIzqPareo1.Location = New System.Drawing.Point(133, 16)
         Me.lblIzqPareo1.Name = "lblIzqPareo1"
-        Me.lblIzqPareo1.Size = New System.Drawing.Size(47, 13)
+        Me.lblIzqPareo1.Size = New System.Drawing.Size(49, 16)
         Me.lblIzqPareo1.TabIndex = 5
         Me.lblIzqPareo1.Text = "Label11"
         '
         'lblDerPareo5
         '
         Me.lblDerPareo5.AutoSize = True
-        Me.lblDerPareo5.Location = New System.Drawing.Point(6, 248)
+        Me.lblDerPareo5.Font = New System.Drawing.Font("MV Boli", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDerPareo5.ForeColor = System.Drawing.Color.White
+        Me.lblDerPareo5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblDerPareo5.Location = New System.Drawing.Point(551, 237)
         Me.lblDerPareo5.Name = "lblDerPareo5"
-        Me.lblDerPareo5.Size = New System.Drawing.Size(42, 13)
+        Me.lblDerPareo5.Size = New System.Drawing.Size(47, 16)
         Me.lblDerPareo5.TabIndex = 4
         Me.lblDerPareo5.Text = "Label6"
+        Me.lblDerPareo5.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'lblDerPareo4
         '
         Me.lblDerPareo4.AutoSize = True
-        Me.lblDerPareo4.Location = New System.Drawing.Point(6, 190)
+        Me.lblDerPareo4.Font = New System.Drawing.Font("MV Boli", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDerPareo4.ForeColor = System.Drawing.Color.White
+        Me.lblDerPareo4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblDerPareo4.Location = New System.Drawing.Point(551, 179)
         Me.lblDerPareo4.Name = "lblDerPareo4"
-        Me.lblDerPareo4.Size = New System.Drawing.Size(42, 13)
+        Me.lblDerPareo4.Size = New System.Drawing.Size(47, 16)
         Me.lblDerPareo4.TabIndex = 3
         Me.lblDerPareo4.Text = "Label5"
+        Me.lblDerPareo4.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'lblDerPareo3
         '
         Me.lblDerPareo3.AutoSize = True
-        Me.lblDerPareo3.Location = New System.Drawing.Point(6, 136)
+        Me.lblDerPareo3.Font = New System.Drawing.Font("MV Boli", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDerPareo3.ForeColor = System.Drawing.Color.White
+        Me.lblDerPareo3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblDerPareo3.Location = New System.Drawing.Point(551, 125)
         Me.lblDerPareo3.Name = "lblDerPareo3"
-        Me.lblDerPareo3.Size = New System.Drawing.Size(42, 13)
+        Me.lblDerPareo3.Size = New System.Drawing.Size(48, 16)
         Me.lblDerPareo3.TabIndex = 2
         Me.lblDerPareo3.Text = "Label4"
+        Me.lblDerPareo3.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'lblDerPareo2
         '
         Me.lblDerPareo2.AutoSize = True
-        Me.lblDerPareo2.Location = New System.Drawing.Point(6, 84)
+        Me.lblDerPareo2.Font = New System.Drawing.Font("MV Boli", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDerPareo2.ForeColor = System.Drawing.Color.White
+        Me.lblDerPareo2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblDerPareo2.Location = New System.Drawing.Point(551, 73)
         Me.lblDerPareo2.Name = "lblDerPareo2"
-        Me.lblDerPareo2.Size = New System.Drawing.Size(42, 13)
+        Me.lblDerPareo2.Size = New System.Drawing.Size(47, 16)
         Me.lblDerPareo2.TabIndex = 1
         Me.lblDerPareo2.Text = "Label3"
+        Me.lblDerPareo2.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'lblDerPareo1
         '
         Me.lblDerPareo1.AutoSize = True
-        Me.lblDerPareo1.Location = New System.Drawing.Point(6, 27)
+        Me.lblDerPareo1.Font = New System.Drawing.Font("MV Boli", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDerPareo1.ForeColor = System.Drawing.Color.White
+        Me.lblDerPareo1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblDerPareo1.Location = New System.Drawing.Point(551, 16)
         Me.lblDerPareo1.Name = "lblDerPareo1"
-        Me.lblDerPareo1.Size = New System.Drawing.Size(42, 13)
+        Me.lblDerPareo1.Size = New System.Drawing.Size(44, 16)
         Me.lblDerPareo1.TabIndex = 0
         Me.lblDerPareo1.Text = "Label1"
+        Me.lblDerPareo1.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'MenuStrip1
         '
@@ -326,7 +379,7 @@ Partial Class FRM_MAIN
         'InicioToolStripMenuItem
         '
         Me.InicioToolStripMenuItem.Name = "InicioToolStripMenuItem"
-        Me.InicioToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.InicioToolStripMenuItem.Size = New System.Drawing.Size(103, 22)
         Me.InicioToolStripMenuItem.Text = "Inicio"
         '
         'ContextMenuStrip1
@@ -338,36 +391,99 @@ Partial Class FRM_MAIN
         '
         Me.StatusStrip1.BackColor = System.Drawing.Color.PaleGoldenrod
         Me.StatusStrip1.Font = New System.Drawing.Font("Segoe UI", 16.0!)
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.lbl_time, Me.ToolStripStatusLabel2, Me.pgsbProcesso})
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lblTimeStatic, Me.lbl_time, Me.lblProgreso, Me.pgsbProcesso, Me.lblNota})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 457)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(661, 35)
         Me.StatusStrip1.TabIndex = 15
         Me.StatusStrip1.Text = "StatusStrip1"
         '
-        'ToolStripStatusLabel1
+        'lblTimeStatic
         '
-        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(98, 30)
-        Me.ToolStripStatusLabel1.Text = "Tiempo: "
+        Me.lblTimeStatic.Name = "lblTimeStatic"
+        Me.lblTimeStatic.Size = New System.Drawing.Size(98, 30)
+        Me.lblTimeStatic.Text = "Tiempo: "
         '
         'lbl_time
         '
         Me.lbl_time.Name = "lbl_time"
         Me.lbl_time.Size = New System.Drawing.Size(0, 30)
         '
-        'ToolStripStatusLabel2
+        'lblProgreso
         '
-        Me.ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
-        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(415, 30)
-        Me.ToolStripStatusLabel2.Spring = True
-        Me.ToolStripStatusLabel2.Text = "Progreso:"
-        Me.ToolStripStatusLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblProgreso.Name = "lblProgreso"
+        Me.lblProgreso.Size = New System.Drawing.Size(446, 30)
+        Me.lblProgreso.Spring = True
+        Me.lblProgreso.Text = "Progreso:"
+        Me.lblProgreso.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'pgsbProcesso
         '
         Me.pgsbProcesso.Name = "pgsbProcesso"
         Me.pgsbProcesso.Size = New System.Drawing.Size(100, 29)
+        '
+        'lblNota
+        '
+        Me.lblNota.Name = "lblNota"
+        Me.lblNota.Size = New System.Drawing.Size(0, 30)
+        '
+        'cbxParResp2
+        '
+        Me.cbxParResp2.Font = New System.Drawing.Font("MV Boli", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxParResp2.FormattingEnabled = True
+        Me.cbxParResp2.Location = New System.Drawing.Point(6, 70)
+        Me.cbxParResp2.Name = "cbxParResp2"
+        Me.cbxParResp2.Size = New System.Drawing.Size(121, 24)
+        Me.cbxParResp2.TabIndex = 11
+        '
+        'cbxParResp3
+        '
+        Me.cbxParResp3.Font = New System.Drawing.Font("MV Boli", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxParResp3.FormattingEnabled = True
+        Me.cbxParResp3.Location = New System.Drawing.Point(6, 122)
+        Me.cbxParResp3.Name = "cbxParResp3"
+        Me.cbxParResp3.Size = New System.Drawing.Size(121, 24)
+        Me.cbxParResp3.TabIndex = 12
+        '
+        'cbxParResp4
+        '
+        Me.cbxParResp4.Font = New System.Drawing.Font("MV Boli", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxParResp4.FormattingEnabled = True
+        Me.cbxParResp4.Location = New System.Drawing.Point(6, 176)
+        Me.cbxParResp4.Name = "cbxParResp4"
+        Me.cbxParResp4.Size = New System.Drawing.Size(121, 24)
+        Me.cbxParResp4.TabIndex = 13
+        '
+        'cbxParResp5
+        '
+        Me.cbxParResp5.Font = New System.Drawing.Font("MV Boli", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxParResp5.FormattingEnabled = True
+        Me.cbxParResp5.Location = New System.Drawing.Point(6, 234)
+        Me.cbxParResp5.Name = "cbxParResp5"
+        Me.cbxParResp5.Size = New System.Drawing.Size(121, 24)
+        Me.cbxParResp5.TabIndex = 14
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("MV Boli", 10.25!)
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(15, 35)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(61, 18)
+        Me.Label1.TabIndex = 16
+        Me.Label1.Text = "Usuario:"
+        '
+        'lblUsuario
+        '
+        Me.lblUsuario.AutoSize = True
+        Me.lblUsuario.Font = New System.Drawing.Font("MV Boli", 10.25!)
+        Me.lblUsuario.ForeColor = System.Drawing.Color.White
+        Me.lblUsuario.Location = New System.Drawing.Point(73, 35)
+        Me.lblUsuario.Name = "lblUsuario"
+        Me.lblUsuario.Size = New System.Drawing.Size(71, 18)
+        Me.lblUsuario.TabIndex = 17
+        Me.lblUsuario.Text = "lblUsuario"
         '
         'FRM_MAIN
         '
@@ -376,6 +492,8 @@ Partial Class FRM_MAIN
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Teal
         Me.ClientSize = New System.Drawing.Size(661, 492)
+        Me.Controls.Add(Me.lblUsuario)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.gbxPareo)
         Me.Controls.Add(Me.gpbxResp)
@@ -424,7 +542,7 @@ Partial Class FRM_MAIN
     Friend WithEvents lblIzqPareo5 As Label
     Friend WithEvents lblIzqPareo4 As Label
     Friend WithEvents lblIzqPareo3 As Label
-    Friend WithEvents lblIzqPareo As Label
+    Friend WithEvents lblIzqPareo2 As Label
     Friend WithEvents lblIzqPareo1 As Label
     Friend WithEvents lblDerPareo5 As Label
     Friend WithEvents MenuStrip1 As MenuStrip
@@ -432,8 +550,16 @@ Partial Class FRM_MAIN
     Friend WithEvents InicioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents StatusStrip1 As StatusStrip
-    Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
+    Friend WithEvents lblTimeStatic As ToolStripStatusLabel
     Friend WithEvents lbl_time As ToolStripStatusLabel
-    Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
+    Friend WithEvents lblProgreso As ToolStripStatusLabel
     Friend WithEvents pgsbProcesso As ToolStripProgressBar
+    Friend WithEvents cbxParResp1 As ComboBox
+    Friend WithEvents lblNota As ToolStripStatusLabel
+    Friend WithEvents cbxParResp2 As ComboBox
+    Friend WithEvents cbxParResp5 As ComboBox
+    Friend WithEvents cbxParResp4 As ComboBox
+    Friend WithEvents cbxParResp3 As ComboBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents lblUsuario As Label
 End Class

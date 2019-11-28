@@ -61,6 +61,7 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -81,12 +82,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dddddxxxsss.Designer.vb">
-      <DependentUpon>dddddxxxsss.vb</DependentUpon>
-    </Compile>
-    <Compile Include="dddddxxxsss.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Estudiante\Preguntas.Designer.vb">
       <DependentUpon>Preguntas.vb</DependentUpon>
     </Compile>
@@ -99,17 +94,28 @@
     <Compile Include="Inicio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Profesor\Graficos.Designer.vb">
+      <DependentUpon>Graficos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Profesor\Graficos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profesor\Preguntas.Designer.vb">
+      <DependentUpon>Preguntas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Profesor\Preguntas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Profesor\Estudiantes.Designer.vb">
       <DependentUpon>Estudiantes.vb</DependentUpon>
     </Compile>
     <Compile Include="Profesor\Estudiantes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="sample.vb">
-      <SubType>Form</SubType>
+    <Compile Include="RegistroUsuario.Designer.vb">
+      <DependentUpon>RegistroUsuario.vb</DependentUpon>
     </Compile>
-    <Compile Include="sample.Designer.vb">
-      <DependentUpon>sample.vb</DependentUpon>
+    <Compile Include="RegistroUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -141,11 +147,17 @@
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Profesor\Graficos.resx">
+      <DependentUpon>Graficos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profesor\Preguntas.resx">
+      <DependentUpon>Preguntas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Profesor\Estudiantes.resx">
       <DependentUpon>Estudiantes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="sample.resx">
-      <DependentUpon>sample.vb</DependentUpon>
+    <EmbeddedResource Include="RegistroUsuario.resx">
+      <DependentUpon>RegistroUsuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

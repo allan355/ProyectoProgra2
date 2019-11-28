@@ -4,4 +4,8 @@
         DataGridView1.Columns("GeneroId").Visible = False
         DataGridView1.Columns("TipoUsuarioID").Visible = False
     End Sub
+
+    Private Sub Estudiantes_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Application.Exit()
+    End Sub
 End Class

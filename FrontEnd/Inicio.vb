@@ -8,18 +8,37 @@
         Me.Close()
     End Sub
 
-    Private Sub lbl_date_Click(sender As Object, e As EventArgs) Handles lbl_date.Click
+    Private Function ObtenerUsuario() As DTOS.Usuario
+        Return Logica.UsuarioLogica.ObtenerUsuario(txt_user.Text.Trim())
+    End Function
 
+    Private Sub frm_prin_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Application.Exit()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim ventana As FRM_PROF = New FRM_PROF()
-        ventana.Show()
-        Me.Hide()
+    Private Sub btnIngresar_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
+        Dim usu As DTOS.Usuario = ObtenerUsuario()
+        If usu Is Nothing Or usu.Cedula Is Nothing Then
+            MessageBox.Show("Cedula no encontrada")
+            Return
+        End If
+        If usu.TipoUsuarioId = 2 Then
+            Dim ventana As FRM_MAIN = New FRM_MAIN()
+            ventana.Usuario = usu
+            ventana.Show()
+            Me.Hide()
+        End If
+        If usu.TipoUsuarioId = 1 Then
+            Dim ventanaP As FRM_PROF = New FRM_PROF()
+            ventanaP.Show()
+            Me.Hide()
+        End If
     End Sub
 
-    Private Sub btn_student_Click(sender As Object, e As EventArgs) Handles btn_student.Click
-        Dim ventana As FRM_MAIN = New FRM_MAIN()
+    Private Sub btnNuevoUsuario_Click(sender As Object, e As EventArgs) Handles btnNuevoUsuario.Click
+        Dim ventana As RegistroUsuario = New RegistroUsuario()
+        ventana.TU = 2
+        ventana.Editable = True
         ventana.Show()
         Me.Hide()
     End Sub

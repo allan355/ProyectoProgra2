@@ -15,9 +15,13 @@ Public Class Preguntas
                 P.Id = DS.Tables(0).Rows(i)("Id")
                 P.Descripcion = DS.Tables(0).Rows(i)("Descripcion")
                 P.SelMultiple = DS.Tables(0).Rows(i)("SelMultiple")
+                P.Pareo = DS.Tables(0).Rows(i)("Pareo")
                 P.TemaId = DS.Tables(0).Rows(i)("TemaId")
                 P.CategoriaId = DS.Tables(0).Rows(i)("CategoriaId")
                 P.RespuestasList = ObtenerRespuestas(P.Id)
+                If P.Pareo Then
+                    P.PreguntaPareo = ObtenerPreguntasPareo(P.Id)
+                End If
                 List.Add(P)
             Next
         End If
@@ -104,6 +108,20 @@ Public Class Preguntas
         Return DTOS.GlobalClass.AleatorioIList(Of DTOS.PreguntaPareo)(ListaR)
     End Function
 
+    Shared Function EliminarPregunta(ByVal _id As Integer) As Boolean
+        Dim Con As Conexion = New Conexion()
+        Dim ConObj As SqlConnection = Con.ObtenerConexion()
+        Dim cmd As SqlCommand = New SqlCommand("delete from respuesta where preguntaid=@id; delete from pregunta where id=@id", ConObj)
+        Dim DS As New DataSet()
+        Dim ListaR As New List(Of DTOS.Respuesta)
+        cmd.Parameters.Add("@id", DbType.String).Value = _id
+        ConObj.Open()
+        cmd.ExecuteNonQuery()
+        Con.Close()
+        Return True
+    End Function
+
+
     Shared Function AgregarPregunta(ByVal Pregunta As DTOS.Pregunta) As Boolean
         Dim Con As Conexion = New Conexion()
         Dim ConObj As SqlConnection = Con.ObtenerConexion()
@@ -117,20 +135,42 @@ Public Class Preguntas
         cmd.Parameters.Add("@Pareo", DbType.Boolean).Value = Pregunta.Pareo
         ConObj.Open()
         Dim PreguntaId As Integer = Convert.ToInt32(cmd.ExecuteScalar())
-        For Each resp In Pregunta.RespuestasList
-            resp.PreguntaId = PreguntaId
-            AgregarRespuesta(resp, ConObj)
-        Next
+        If Pregunta.PreguntaPareo IsNot Nothing Then
+            For Each par In Pregunta.PreguntaPareo
+                par.PreguntaId = PreguntaId
+                AgregarPareo(par, ConObj)
+            Next
+        End If
+        If Pregunta.RespuestasList IsNot Nothing Then
+            For Each resp In Pregunta.RespuestasList
+                resp.PreguntaId = PreguntaId
+                AgregarRespuesta(resp, ConObj)
+            Next
+        End If
         Con.Close()
         Return True
     End Function
+    Shared Function AgregarPareo(ByVal par As DTOS.PreguntaPareo, ByVal Con As SqlConnection) As Boolean
+        Dim cmd As SqlCommand = New SqlCommand("Insert into PreguntaPareo(Descripcion,PreguntaId) output INSERTED.ID values (@Descripcion,@PreguntaId)", Con)
+        Dim DS As New DataSet()
+        Dim ListaR As New List(Of DTOS.PreguntaPareo)
+        cmd.Parameters.Add("@Descripcion", DbType.String).Value = par.Descripcion
+        cmd.Parameters.Add("@PreguntaId", DbType.Int32).Value = par.PreguntaId
+        Dim parid As Integer = cmd.ExecuteScalar()
+        par.Respuesta.PareoId = parid
+        par.Respuesta.PreguntaId = par.PreguntaId
+        AgregarRespuesta(par.Respuesta, Con)
+        Return True
+    End Function
+
     Shared Function AgregarRespuesta(ByVal Respuesta As DTOS.Respuesta, ByVal Con As SqlConnection) As Boolean
-        Dim cmd As SqlCommand = New SqlCommand("Insert into Respuesta(Descripcion,Correcta,PreguntaId) values (@Descripcion,@Correcta,@PreguntaId)", Con)
+        Dim cmd As SqlCommand = New SqlCommand("Insert into Respuesta(Descripcion,Correcta,PreguntaId,PareoId) output INSERTED.ID values (@Descripcion,@Correcta,@PreguntaId,@PareoId)", Con)
         Dim DS As New DataSet()
         Dim ListaR As New List(Of DTOS.Respuesta)
         cmd.Parameters.Add("@Descripcion", DbType.String).Value = Respuesta.Descripcion
         cmd.Parameters.Add("@Correcta", DbType.Boolean).Value = Respuesta.Correcta
         cmd.Parameters.Add("@PreguntaId", DbType.Int32).Value = Respuesta.PreguntaId
+        cmd.Parameters.Add("@PareoId", DbType.Int32).Value = Respuesta.PareoId
         Dim respuestaId As Integer = cmd.ExecuteScalar()
 
         Return True

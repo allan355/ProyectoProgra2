@@ -72,6 +72,7 @@
     <Compile Include="DTO\Log.vb" />
     <Compile Include="DTO\Pregunta.vb" />
     <Compile Include="DTO\PreguntaPareo.vb" />
+    <Compile Include="DTO\ReportePregunta.vb" />
     <Compile Include="DTO\Respuesta.vb" />
     <Compile Include="DTO\RespuestaXPregunta.vb" />
     <Compile Include="DTO\RespuestaXSesion.vb" />

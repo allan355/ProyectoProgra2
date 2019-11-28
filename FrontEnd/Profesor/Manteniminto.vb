@@ -76,12 +76,22 @@
             Else
                 Respuestas.Add(New DTOS.Respuesta() With {.Descripcion = txt_D.Text, .Correcta = False})
             End If
-
-        Else
+        End If
+        If cbxTipoPregunta.SelectedIndex = 1 Then
             Pregunta.SelMultiple = False
             For Each Resp As String In LST_ANSW.Items
                 Respuestas.Add(New DTOS.Respuesta() With {.Descripcion = Resp, .Correcta = True})
             Next
+        End If
+        If cbxTipoPregunta.SelectedIndex = 2 Then
+            Pregunta.Pareo = True
+            Dim listaPareo As List(Of DTOS.PreguntaPareo) = New List(Of DTOS.PreguntaPareo)
+            listaPareo.Add(New DTOS.PreguntaPareo() With {.Descripcion = lblIzqPareo1.Text, .Respuesta = New DTOS.Respuesta() With {.Descripcion = lblDerPareo1.Text, .Correcta = True}})
+            listaPareo.Add(New DTOS.PreguntaPareo() With {.Descripcion = lblIzqPareo2.Text, .Respuesta = New DTOS.Respuesta() With {.Descripcion = lblDerPareo2.Text, .Correcta = True}})
+            listaPareo.Add(New DTOS.PreguntaPareo() With {.Descripcion = lblIzqPareo3.Text, .Respuesta = New DTOS.Respuesta() With {.Descripcion = lblDerPareo3.Text, .Correcta = True}})
+            listaPareo.Add(New DTOS.PreguntaPareo() With {.Descripcion = lblIzqPareo4.Text, .Respuesta = New DTOS.Respuesta() With {.Descripcion = lblDerPareo4.Text, .Correcta = True}})
+            listaPareo.Add(New DTOS.PreguntaPareo() With {.Descripcion = lblIzqPareo5.Text, .Respuesta = New DTOS.Respuesta() With {.Descripcion = lblDerPareo5.Text, .Correcta = True}})
+            Pregunta.PreguntaPareo = listaPareo
         End If
         Pregunta.RespuestasList = Respuestas
         Logica.PreguntasLogica.AgregarPregunta(Pregunta)
@@ -95,6 +105,27 @@
 
     Private Sub VerUsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VerUsuariosToolStripMenuItem.Click
         Dim ventana As Estudiantes = New Estudiantes()
+        ventana.Show()
+    End Sub
+
+    Private Sub VerPreguntasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VerPreguntasToolStripMenuItem.Click
+        Dim ventana As frmPreguntas = New frmPreguntas()
+        ventana.Show()
+    End Sub
+
+    Private Sub FRM_PROF_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Application.Exit()
+    End Sub
+
+    Private Sub AgregarProfesorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarProfesorToolStripMenuItem.Click
+        Dim ventana As RegistroUsuario = New RegistroUsuario()
+        ventana.TU = 1
+        ventana.Editable = True
+        ventana.Show()
+    End Sub
+
+    Private Sub VerGraficoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VerGraficoToolStripMenuItem.Click
+        Dim ventana As Graficos = New Graficos()
         ventana.Show()
     End Sub
 End Class

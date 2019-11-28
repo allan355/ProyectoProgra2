@@ -44,10 +44,13 @@ Partial Class FRM_PROF
         Me.txt_answer = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.gbxPareo = New System.Windows.Forms.GroupBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.lblIzqPareo5 = New System.Windows.Forms.TextBox()
         Me.lblIzqPareo4 = New System.Windows.Forms.TextBox()
         Me.lblIzqPareo3 = New System.Windows.Forms.TextBox()
-        Me.lblIzqPareo = New System.Windows.Forms.TextBox()
+        Me.lblIzqPareo2 = New System.Windows.Forms.TextBox()
         Me.lblIzqPareo1 = New System.Windows.Forms.TextBox()
         Me.lblDerPareo5 = New System.Windows.Forms.TextBox()
         Me.lblDerPareo4 = New System.Windows.Forms.TextBox()
@@ -57,6 +60,9 @@ Partial Class FRM_PROF
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VerUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VerPreguntasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AgregarProfesorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VerGraficoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.gbxPreguntas.SuspendLayout()
         Me.GP_SU.SuspendLayout()
         Me.GP_DESA.SuspendLayout()
@@ -274,10 +280,13 @@ Partial Class FRM_PROF
         '
         'gbxPareo
         '
+        Me.gbxPareo.Controls.Add(Me.Label5)
+        Me.gbxPareo.Controls.Add(Me.Label4)
+        Me.gbxPareo.Controls.Add(Me.Label3)
         Me.gbxPareo.Controls.Add(Me.lblIzqPareo5)
         Me.gbxPareo.Controls.Add(Me.lblIzqPareo4)
         Me.gbxPareo.Controls.Add(Me.lblIzqPareo3)
-        Me.gbxPareo.Controls.Add(Me.lblIzqPareo)
+        Me.gbxPareo.Controls.Add(Me.lblIzqPareo2)
         Me.gbxPareo.Controls.Add(Me.lblIzqPareo1)
         Me.gbxPareo.Controls.Add(Me.lblDerPareo5)
         Me.gbxPareo.Controls.Add(Me.lblDerPareo4)
@@ -290,72 +299,99 @@ Partial Class FRM_PROF
         Me.gbxPareo.TabIndex = 14
         Me.gbxPareo.TabStop = False
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(145, 270)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(353, 13)
+        Me.Label5.TabIndex = 12
+        Me.Label5.Text = "El Valor de la columna A, se asociara con el Valor de la Columna B"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(481, 10)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(67, 13)
+        Me.Label4.TabIndex = 11
+        Me.Label4.Text = "Columna B"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(6, 10)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(66, 13)
+        Me.Label3.TabIndex = 10
+        Me.Label3.Text = "Columna A"
+        '
         'lblIzqPareo5
         '
-        Me.lblIzqPareo5.Location = New System.Drawing.Point(484, 248)
+        Me.lblIzqPareo5.Location = New System.Drawing.Point(9, 244)
         Me.lblIzqPareo5.Name = "lblIzqPareo5"
         Me.lblIzqPareo5.Size = New System.Drawing.Size(147, 20)
         Me.lblIzqPareo5.TabIndex = 9
         '
         'lblIzqPareo4
         '
-        Me.lblIzqPareo4.Location = New System.Drawing.Point(484, 190)
+        Me.lblIzqPareo4.Location = New System.Drawing.Point(9, 186)
         Me.lblIzqPareo4.Name = "lblIzqPareo4"
         Me.lblIzqPareo4.Size = New System.Drawing.Size(147, 20)
         Me.lblIzqPareo4.TabIndex = 8
         '
         'lblIzqPareo3
         '
-        Me.lblIzqPareo3.Location = New System.Drawing.Point(484, 138)
+        Me.lblIzqPareo3.Location = New System.Drawing.Point(9, 134)
         Me.lblIzqPareo3.Name = "lblIzqPareo3"
         Me.lblIzqPareo3.Size = New System.Drawing.Size(147, 20)
         Me.lblIzqPareo3.TabIndex = 7
         '
-        'lblIzqPareo
+        'lblIzqPareo2
         '
-        Me.lblIzqPareo.Location = New System.Drawing.Point(484, 84)
-        Me.lblIzqPareo.Name = "lblIzqPareo"
-        Me.lblIzqPareo.Size = New System.Drawing.Size(147, 20)
-        Me.lblIzqPareo.TabIndex = 6
+        Me.lblIzqPareo2.Location = New System.Drawing.Point(9, 80)
+        Me.lblIzqPareo2.Name = "lblIzqPareo2"
+        Me.lblIzqPareo2.Size = New System.Drawing.Size(147, 20)
+        Me.lblIzqPareo2.TabIndex = 6
         '
         'lblIzqPareo1
         '
-        Me.lblIzqPareo1.Location = New System.Drawing.Point(484, 30)
+        Me.lblIzqPareo1.Location = New System.Drawing.Point(9, 26)
         Me.lblIzqPareo1.Name = "lblIzqPareo1"
         Me.lblIzqPareo1.Size = New System.Drawing.Size(147, 20)
         Me.lblIzqPareo1.TabIndex = 5
         '
         'lblDerPareo5
         '
-        Me.lblDerPareo5.Location = New System.Drawing.Point(6, 248)
+        Me.lblDerPareo5.Location = New System.Drawing.Point(484, 244)
         Me.lblDerPareo5.Name = "lblDerPareo5"
         Me.lblDerPareo5.Size = New System.Drawing.Size(147, 20)
         Me.lblDerPareo5.TabIndex = 4
         '
         'lblDerPareo4
         '
-        Me.lblDerPareo4.Location = New System.Drawing.Point(6, 190)
+        Me.lblDerPareo4.Location = New System.Drawing.Point(484, 186)
         Me.lblDerPareo4.Name = "lblDerPareo4"
         Me.lblDerPareo4.Size = New System.Drawing.Size(147, 20)
         Me.lblDerPareo4.TabIndex = 3
         '
         'lblDerPareo3
         '
-        Me.lblDerPareo3.Location = New System.Drawing.Point(6, 136)
+        Me.lblDerPareo3.Location = New System.Drawing.Point(484, 132)
         Me.lblDerPareo3.Name = "lblDerPareo3"
         Me.lblDerPareo3.Size = New System.Drawing.Size(147, 20)
         Me.lblDerPareo3.TabIndex = 2
         '
         'lblDerPareo2
         '
-        Me.lblDerPareo2.Location = New System.Drawing.Point(6, 84)
+        Me.lblDerPareo2.Location = New System.Drawing.Point(484, 80)
         Me.lblDerPareo2.Name = "lblDerPareo2"
         Me.lblDerPareo2.Size = New System.Drawing.Size(147, 20)
         Me.lblDerPareo2.TabIndex = 1
         '
         'lblDerPareo1
         '
-        Me.lblDerPareo1.Location = New System.Drawing.Point(6, 30)
+        Me.lblDerPareo1.Location = New System.Drawing.Point(484, 26)
         Me.lblDerPareo1.Name = "lblDerPareo1"
         Me.lblDerPareo1.Size = New System.Drawing.Size(147, 20)
         Me.lblDerPareo1.TabIndex = 0
@@ -372,7 +408,7 @@ Partial Class FRM_PROF
         '
         'ArchivoToolStripMenuItem
         '
-        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VerUsuariosToolStripMenuItem})
+        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VerUsuariosToolStripMenuItem, Me.VerPreguntasToolStripMenuItem, Me.AgregarProfesorToolStripMenuItem, Me.VerGraficoToolStripMenuItem})
         Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
         Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
         Me.ArchivoToolStripMenuItem.Text = "Archivo"
@@ -382,6 +418,24 @@ Partial Class FRM_PROF
         Me.VerUsuariosToolStripMenuItem.Name = "VerUsuariosToolStripMenuItem"
         Me.VerUsuariosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.VerUsuariosToolStripMenuItem.Text = "Ver Usuarios"
+        '
+        'VerPreguntasToolStripMenuItem
+        '
+        Me.VerPreguntasToolStripMenuItem.Name = "VerPreguntasToolStripMenuItem"
+        Me.VerPreguntasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.VerPreguntasToolStripMenuItem.Text = "Ver Preguntas"
+        '
+        'AgregarProfesorToolStripMenuItem
+        '
+        Me.AgregarProfesorToolStripMenuItem.Name = "AgregarProfesorToolStripMenuItem"
+        Me.AgregarProfesorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AgregarProfesorToolStripMenuItem.Text = "Agregar Profesor"
+        '
+        'VerGraficoToolStripMenuItem
+        '
+        Me.VerGraficoToolStripMenuItem.Name = "VerGraficoToolStripMenuItem"
+        Me.VerGraficoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.VerGraficoToolStripMenuItem.Text = "Ver Grafico"
         '
         'FRM_PROF
         '
@@ -439,7 +493,7 @@ Partial Class FRM_PROF
     Friend WithEvents lblIzqPareo5 As TextBox
     Friend WithEvents lblIzqPareo4 As TextBox
     Friend WithEvents lblIzqPareo3 As TextBox
-    Friend WithEvents lblIzqPareo As TextBox
+    Friend WithEvents lblIzqPareo2 As TextBox
     Friend WithEvents lblIzqPareo1 As TextBox
     Friend WithEvents lblDerPareo5 As TextBox
     Friend WithEvents lblDerPareo4 As TextBox
@@ -449,4 +503,10 @@ Partial Class FRM_PROF
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents ArchivoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VerUsuariosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents VerPreguntasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AgregarProfesorToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents VerGraficoToolStripMenuItem As ToolStripMenuItem
 End Class
